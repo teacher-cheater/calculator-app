@@ -12,9 +12,13 @@ const App = () => {
   };
 
   const calculate = () => {
+    try {
     const calculatedResult = parseAndCalculate(input);
     console.log("calculatedResult", calculatedResult);
     setResult(calculatedResult.toString());
+    } catch (error) {
+      setResult("Ошибка");
+    }
   };
 
   const clearInput = () => {
@@ -27,6 +31,7 @@ const App = () => {
       calculate();
     } else if (event.key === "Escape") {
       console.log(event.key);
+
       clearInput();
     }
   };
@@ -62,7 +67,9 @@ const App = () => {
             <button onClick={() => appendToInput("00")}>00</button>
             <button onClick={() => appendToInput("0")}>0</button>
             <button onClick={() => appendToInput(",")}>,</button>
-            <button onClick={calculate}>=</button>
+            <button className="active" onClick={calculate}>
+              =
+            </button>
           </div>
         </div>
       </div>

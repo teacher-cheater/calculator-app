@@ -8,6 +8,10 @@ export const parseAndCalculate = (expression: string): number => {
       case "×":
       case "/":
         return 2;
+      case "%":
+        return 3; // Высший приоритет для %
+      case "√":
+        return 4; // Высший приоритет для √
       default:
         return 0;
     }
@@ -22,15 +26,24 @@ export const parseAndCalculate = (expression: string): number => {
         return a - b;
       case "×":
         return a * b;
+      case "*":
+        return a * b;
       case "/":
+        if (b === 0) {
+          throw new Error("Ошибка");
+        }
         return a / b;
+      case "%":
+        return a * (b / 100); // Процент от числа a
+      case "√":
+        return Math.sqrt(b);
       default:
         throw new Error("Недопустимая операция");
     }
   };
 
   // Разделение на токены (числа и операции)
-  const tokens = expression.match(/(\d+(\.\d+)?|[+\-×/()])/g);
+  const tokens = expression.match(/(\d+(\.\d+)?|[+\-×*/()%√])/g);
   if (!tokens) throw new Error("Недопустимое выражение");
 
   const values: number[] = [];
@@ -38,6 +51,7 @@ export const parseAndCalculate = (expression: string): number => {
 
   for (const token of tokens) {
     if (!isNaN(Number(token))) {
+    console.log('token', token);
       values.push(Number(token));
     } else if (token === "(") {
       operators.push(token);
@@ -45,7 +59,7 @@ export const parseAndCalculate = (expression: string): number => {
       while (operators.length && operators[operators.length - 1] !== "(") {
         const op = operators.pop()!;
         const b = values.pop()!;
-        const a = values.pop()!;
+        const a = op === "√" ? 0 : values.pop()!;
         values.push(applyOperation(a, b, op));
       }
       operators.pop(); // Убираем '('
@@ -56,7 +70,7 @@ export const parseAndCalculate = (expression: string): number => {
       ) {
         const op = operators.pop()!;
         const b = values.pop()!;
-        const a = values.pop()!;
+        const a = op === "√" ? 0 : values.pop()!;
         values.push(applyOperation(a, b, op));
       }
       operators.push(token);
@@ -66,7 +80,7 @@ export const parseAndCalculate = (expression: string): number => {
   while (operators.length) {
     const op = operators.pop()!;
     const b = values.pop()!;
-    const a = values.pop()!;
+    const a = op === "√" ? 0 : values.pop()!;
     values.push(applyOperation(a, b, op));
   }
 
