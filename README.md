@@ -15,7 +15,7 @@
 Инструкции по запуску и развертыванию:
 1. Клонируйте репозиторий проекта:
 git clone git@github.com:teacher-cheater/calculator-app.git
-cd calculator-app
+передите в папку cd calculator-app
 
 2. Установите зависимости:
 npm install
@@ -28,26 +28,26 @@ npm install eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin es
 Сборка и запуск в режиме разработки:
 
 npm start
-Это команда запустит Webpack Dev Server, и вы сможете увидеть приложение по адресу http://localhost:3000.
+Эта команда запустит Webpack Dev Server, и вы сможете увидеть приложение по адресу http://localhost:3000
 
 Сборка для продакшена:
 npm run build:prod
-Это команда создаст оптимизированную сборку проекта в папке dist (минимизорованные файлы)
+Эта команда создаст оптимизированную сборку проекта в папке dist (минимизорованные файлы)
 
 Сборка для разработки:
 npm run build:dev
-Это команда создаст сборку проекта в папке dist
+Эта команда создаст сборку проекта в папке dist
 
 Запуск тестов:
 npm run test
-Это команда выполнит тесты, которые вы написали для вашего приложения.
+Эта команда выполнит тесты, которые вы написали для вашего приложения.
 
 Настройки для VS Code:
 Для корректной работы prettier нужно использовать горячие клавиши shift+alt+f,
 тем самым он отформатирует файл по заданным параметрам (файл в корне проекта .prettierrc) 
 
-Как только вы запутите приложение, оно будет выглядеть вот так. 
-Десктоп, планшет и мобильная версия
+Как только вы запустите приложение, оно будет выглядеть вот так. 
+Десктоп (на цифре 1 эффект hover), планшет и мобильная версия
 <img width="951" alt="Screenshot_4" src="https://github.com/user-attachments/assets/0fd24232-25b0-437f-86aa-9f3c91681c4b">
 <img width="301" alt="Screenshot_2" src="https://github.com/user-attachments/assets/baa3ffe2-68d0-4f27-9764-2ddc8a3b349a">
 <img width="189" alt="Screenshot_3" src="https://github.com/user-attachments/assets/ba6cdbdc-a394-46bc-b460-6f23efd2b1d0">
