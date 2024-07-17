@@ -7,7 +7,6 @@
     "jsx": "react-jsx",
     "allowJs": true,
     "strict": true,
-    // "types": "module",
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "esModuleInterop": true

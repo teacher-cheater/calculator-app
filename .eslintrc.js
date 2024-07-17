@@ -1,4 +1,7 @@
 module.exports = {
+  env: {
+    node: true,
+  },
   overrides: [
     {
       files: ["*.test.ts"],
