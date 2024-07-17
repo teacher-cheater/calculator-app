@@ -48,7 +48,7 @@ npm run test
 
 Как только вы запутите приложение, оно будет выглядеть вот так. 
 Десктоп, планшет и мобильная версия
-<img width="721" alt="Screenshot_1" src="https://github.com/user-attachments/assets/6b10f8cf-af7b-4136-9b17-de1190075804">
+<img width="951" alt="Screenshot_4" src="https://github.com/user-attachments/assets/0fd24232-25b0-437f-86aa-9f3c91681c4b">
 <img width="301" alt="Screenshot_2" src="https://github.com/user-attachments/assets/baa3ffe2-68d0-4f27-9764-2ddc8a3b349a">
 <img width="189" alt="Screenshot_3" src="https://github.com/user-attachments/assets/ba6cdbdc-a394-46bc-b460-6f23efd2b1d0">
 
