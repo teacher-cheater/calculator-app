@@ -1,12 +1,11 @@
 import Calculator from "../widgets/Calculator/ui/Calculator";
-import "./styles/App.scss";
-
+import "./App.scss";
 const App = () => {
-    return (
-        <div className="app">
-            <Calculator/>
-        </div>
-    );
+  return (
+    <div className="wrapper">
+      <Calculator />
+    </div>
+  );
 };
 
 export default App;

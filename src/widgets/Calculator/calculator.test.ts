@@ -20,4 +20,7 @@ describe('parseAndCalculate', () => {
   test('сложные выражения', () => {
     expect(parseAndCalculate('3+5×2-4/2')).toBe(11);
   });
+  test('выражение со скобками', () => {
+    expect(parseAndCalculate('4+(3+4)/2')).toBe(7.5);
+  });
 });
